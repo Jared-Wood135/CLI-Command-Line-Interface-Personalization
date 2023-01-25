@@ -49,3 +49,8 @@ NOTES ON PROCEDURE FOLLOWS - WILL BE REORGANIZED LATER BUT FOR NOW ACTS AS SCRAT
             - HIGHLIGHT
                 - %S<INPUT>%s
 
+SOURCES:
+- VIDEO TUTORIAL: https://www.youtube.com/watch?v=p4h-5B8k2NY
+- CLI COLORS: https://www.lihaoyi.com/post/BuildyourownCommandLinewithANSIescapecodes.html#colors
+
+NOTHING FOLLOWS FOR NOW
