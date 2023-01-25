@@ -24,15 +24,17 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         - CHANGE COLOR:
             - FOREGROUND: %F{color you want}{part you want this color to apply}%f
             - BACKGROUND: %K{color you want}%k
-            - USABLE COLORS
-                - RED: red
-                - BLUE: blue
-                - GREEN: green
-                - YELLOW: yellow
-                - BLACK: black
-                - WHITE: white
-                - MAGENTA: magenta
-                - CYAN: cyan
+              
+            | USABLE COLORS | CODE FORMAT |
+            | --- | --- |
+            | RED | red |
+            | BLUE | blue |
+            | GREEN | green |
+            | YELLOW | yellow |
+            | BLACK | black |
+            | WHITE | white |
+            | MAGENTA | magenta |
+            | CYAN | cyan |
         - EXAMPLE PROMPT PERSONALIZATION
             - INPUT: PS1="%B%S%F{green}%n@Yeet%f%s%b %B%F{red}%1~ | %f%b"
             - OUTPUT:
@@ -76,19 +78,25 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         - CHANGE COLOR:
             - FOREGROUND: %F{color you want}{part you want this color to apply}%f
             - BACKGROUND: %K{color you want}%k
-            - USABLE COLORS
-                - RED: red
-                - BLUE: blue
-                - GREEN: green
-                - YELLOW: yellow
-                - BLACK: black
-                - WHITE: white
-                - MAGENTA: magenta
-                - CYAN: cyan
+            
+            |     USABLE COLORS    | CODE FORMAT |
+            |          ---         |     ---     |
+            |      <r>RED</r>      |     red     |
+            |   <blue>BLUE</blue>  |     blue    |
+            |     <g>GREEN</g>     |    green    |
+            |     <y>YELLOW</y>    |    yellow   |
+            | <black>BLACK</black> |    black    |
+            |     <w>WHITE</w>     |    white    |
+            |    <m>MAGENTA</m>    |   magenta   |
+            |      <c>CYAN</c>     |     cyan    |
+
         - EXAMPLE PROMPT PERSONALIZATION
-            ```terminal
+            ```
             INPUT: 
             PS1="%B%S%F{green}%n@Yeet%f%s%b %B%F{red}%1~ | %f%b"
+
+            OUTPUT:
+            *Test* 
              ```
             - OUTPUT:
                 - USER: "manupfool" -> BOLD & GREEN
@@ -109,3 +117,24 @@ IGNORE THIS (TESTING):
 | WHITE | white |
 | MAGENTA | magenta |
 | CYAN | cyan |
+
+MARKDOWN TEST
+<style>
+r { color: Red }
+blue { color: Blue }
+g { color: Green }
+y { color: Yellow }
+black { color: Black }
+w { color: White }
+m { color: Magenta }
+c { color: cyan }
+
+</style>
+<r> RED </r>
+
+<b> BLUE </b>
+
+<g> GREEN </g>
+
+line 2
+line 3
