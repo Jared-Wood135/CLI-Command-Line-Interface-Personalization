@@ -1,0 +1,22 @@
+```
+1. quick-setup.md
+    - Clean-up
+        - Create tables
+        - Create color coding
+        - Create dropdowns
+        - Ensure easy to follow instructions
+        - Ensure instructions are accurate
+    
+2.  descriptive-setup.md
+    - Create descriptive-setup.md
+    - Add explanations of everything to "quick-setup.md"
+
+3. python-cli-test.md
+    - Create python-cli-test
+        - Use to test python scripts for later use to apply the setup
+        - Iron out any issues
+
+4. python-cli-setup.md
+    - Create python-cli-setup.md
+        - Reflect final python script here
+```
