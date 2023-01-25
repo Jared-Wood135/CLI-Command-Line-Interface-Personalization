@@ -20,7 +20,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         - CHANGE FORMATTING:
             - BOLD: %B{part you want bold}%b
             - UNDERLINE: %U{part you want underlined}%u
-            - HIGHLIGHT: %S{part you want highlighted}%u
+            - HIGHLIGHT: %S{part you want highlighted}%s
         - CHANGE COLOR:
             - FOREGROUND: %F{color you want}{part you want this color to apply}%f
             - BACKGROUND: %K{color you want}%k
@@ -72,7 +72,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         - CHANGE FORMATTING:
             - BOLD: %B{part you want bold}%b
             - UNDERLINE: %U{part you want underlined}%u
-            - HIGHLIGHT: %S{part you want highlighted}%u
+            - HIGHLIGHT: %S{part you want highlighted}%s
         - CHANGE COLOR:
             - FOREGROUND: %F{color you want}{part you want this color to apply}%f
             - BACKGROUND: %K{color you want}%k
@@ -86,10 +86,26 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
                 - MAGENTA: magenta
                 - CYAN: cyan
         - EXAMPLE PROMPT PERSONALIZATION
-            - INPUT: PS1="%B%S%F{green}%n@Yeet%f%s%b %B%F{red}%1~ | %f%b"
+            ```terminal
+            INPUT: 
+            PS1="%B%S%F{green}%n@Yeet%f%s%b %B%F{red}%1~ | %f%b"
+             ```
             - OUTPUT:
                 - USER: "manupfool" -> BOLD & GREEN
                 - HOST: "Yeet" -> BOLD & GREEN
                 - CURRENT DRIECTORY: "%1" -> BOLD & RED
                 - HOME NAME: "~" -> BOLD & RED
                 - END OF PROMPT: "| " -> BOLD & RED W/ A SPACE AFTER
+
+
+IGNORE THIS (TESTING):
+| USABLE COLORS | CODE FORMAT |
+| --- | --- |
+| RED | red |
+| BLUE | blue |
+| GREEN | green |
+| YELLOW | yellow |
+| BLACK | black |
+| WHITE | white |
+| MAGENTA | magenta |
+| CYAN | cyan |
