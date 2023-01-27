@@ -82,10 +82,10 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             |     USABLE COLORS    | CODE FORMAT |
             |          ---         |     ---     |
             |      <r>RED</r>      |     red     |
-            |   <blue>BLUE</blue>  |     blue    |
+            |    <blu>BLUE</blu>   |     blue    |
             |     <g>GREEN</g>     |    green    |
             |     <y>YELLOW</y>    |    yellow   |
-            | <black>BLACK</black> |    black    |
+            |   <bla>BLACK</bla>   |    black    |
             |     <w>WHITE</w>     |    white    |
             |    <m>MAGENTA</m>    |   magenta   |
             |      <c>CYAN</c>     |     cyan    |
@@ -96,14 +96,12 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             PS1="%B%S%F{green}%n@Yeet%f%s%b %B%F{red}%1~ | %f%b"
 
             OUTPUT:
-            *Test* 
-             ```
-            - OUTPUT:
                 - USER: "manupfool" -> BOLD & GREEN
                 - HOST: "Yeet" -> BOLD & GREEN
                 - CURRENT DRIECTORY: "%1" -> BOLD & RED
                 - HOME NAME: "~" -> BOLD & RED
                 - END OF PROMPT: "| " -> BOLD & RED W/ A SPACE AFTER
+            ```
 
 
 IGNORE THIS (TESTING):
@@ -121,10 +119,10 @@ IGNORE THIS (TESTING):
 MARKDOWN TEST
 <style>
 r { color: Red }
-blue { color: Blue }
+blu { color: Blue }
 g { color: Green }
 y { color: Yellow }
-black { color: Black }
+bla { color: Black }
 w { color: White }
 m { color: Magenta }
 c { color: cyan }
@@ -134,7 +132,4 @@ c { color: cyan }
 
 <b> BLUE </b>
 
-<g> GREEN </g>
-
-line 2
-line 3
+<g> GREEN </g
