@@ -196,7 +196,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             %S{part you want highlighted}%s
             ```
         - **CHANGE COLOR**:
-        <a href="#Prompt Modification">Test</a>
+        <a href="#Prompt_Modification">Test</a>
             ```
             FOREGROUND:
             %F{color you want}{part you want this color to apply}%f
