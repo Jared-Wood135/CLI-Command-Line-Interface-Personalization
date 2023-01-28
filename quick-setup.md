@@ -34,8 +34,9 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 
 
 <!--- CLI Prompt Modification -->
-<button type="button" class="collapsible">Open Collapsible</button>
-<div class="content">
+<details>
+<summary>CLI Prompt Modification</summary>
+<p>
 <a id="Prompt_Modification"></a>
 <head>
     <h2 align="center">
@@ -242,7 +243,8 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             ```
             - *OUTPUT IN **TERMINAL***:
             ![Image](https://user-images.githubusercontent.com/122934893/215004109-e646e190-83a3-4eda-93a9-83580dd3bb2e.png)
-</div>
+</p>
+</details>
 
 
 
