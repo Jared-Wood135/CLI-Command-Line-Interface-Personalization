@@ -14,8 +14,15 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
     <br><br>
 </head>
 
+<!--- CLI Table of Contents -->
+<ol>
+    <li>CLI Prompt Modification</li>
+    <a id="Prompt Modification">Jump to CLI Prompt Modification</a>
+    <li>CLI Alias Creation</li>
+</ol>
 
 <!--- CLI Prompt Modification -->
+<a href="#Prompt Modification">Test</a>
 <head>
     <h2 align="center">
         <b><u><i>
