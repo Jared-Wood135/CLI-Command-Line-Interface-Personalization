@@ -24,19 +24,33 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 
 
 <!--- CLI Table of Contents -->
+<head>
+    <h2 align="center">
+        <b>
+        TABLE OF CONTENTS
+        </b>
+    </h2>
+</head>
+<ul>
+    <h4 align="center">
+        <b>
+            <li>CLI PROMPT MODIFICATION</li>
+            <li>CLI ALIAS MODIFICATION</li>
+        </b>
+    </h4>
+</ul>
+<!--- Alternate Navigation Method If Necessary
 <ul>
     <li><a href="#Prompt_Modification">CLI Prompt Modification</li>
     <li><a href="#Alias_Modification">CLI Alias Modification</li>
 </ul>
+-->
 
 
 
 
 
 <!--- CLI Prompt Modification -->
-<details>
-<summary>CLI Prompt Modification</summary>
-<p>
 <a id="Prompt_Modification"></a>
 <head>
     <h2 align="center">
@@ -46,9 +60,24 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
     </h2>
 </head>
 <br>
-
-1. ***GLOBAL MODIFICATION (SETTINGS WILL APPLY TO ALL USERS)***
-    - ***LOCATE global "zshrc" file***
+    <details>
+    <p>
+    <summary>EXPLANATION</summary>
+        <h5 align="center">
+        The purpose of the following instructions is to modify your terminal's prompt line.  Please determine if you would like to modify your global(/private/etc/zshrc) or user (~/.zshrc) file before following instructions.
+        </h5>
+    </p>    
+    </details>
+1. GLOBAL MODIFICATION (CHANGES WILL APPLY TO ALL USERS)
+    <details>
+    <p>
+    <summary>EXPLANATION</summary>
+        <h5 align="center">
+        Your terminal's global file is located at your "/private/etc" directory as "zshrc".  Keep in mind that changes in your <b><i>GLOBAL</b></i> file will apply to <b><i>ALL USERS</b></i>.  Think of this file as a settings page for your terminal.  Everytime you open terminal, this file is read to dicatate key bindings, prompt structure, aliases if any, and much more.  In short, if you want to personalize your CLI without any online downloads, you typically will have to modify this file.
+        </h5>
+    </p>
+    </details>
+    - ***LOCATE GLOBAL "zshrc" FILE***
         - *INPUT IN **TERMINAL***:
         ```
         cd /private/etc
@@ -65,7 +94,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 
       ***EXAMPLE DEFAULT:*** 
       ```
-      PS1="%n@%m %1~ %# " 
+      PS1="%n@%m %1~ %# "
       ```
       ![Image](https://user-images.githubusercontent.com/122934893/215006026-a797a6b5-a1e6-46fa-b423-bbbc7a07d715.png)
         - **PARTS OF PS1**
@@ -126,9 +155,8 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             ```
             - *OUTPUT IN **TERMINAL***:
             ![Image](https://user-images.githubusercontent.com/122934893/215004109-e646e190-83a3-4eda-93a9-83580dd3bb2e.png)
-
-2. ***USER/LOCAL MODIFICATION (SETTINGS WILL APPLY TO SPECIFIC USER)***
-    - ***LOCATE USER/LOCAL "zshrc" file***
+2. ***USER MODIFICATION (SETTINGS WILL APPLY TO SPECIFIC USER)***
+    - ***LOCATE USER ".zshrc" file**
         - *INPUT IN **TERMINAL***:
         ```
         cd ~
@@ -216,7 +244,6 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             %S{part you want highlighted}%s
             ```
         - **CHANGE COLOR**:
-        <a href="#Prompt_Modification" target="_parent">Test</a>
             ```
             FOREGROUND:
             %F{color you want}{part you want this color to apply}%f
@@ -243,8 +270,6 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             ```
             - *OUTPUT IN **TERMINAL***:
             ![Image](https://user-images.githubusercontent.com/122934893/215004109-e646e190-83a3-4eda-93a9-83580dd3bb2e.png)
-</p>
-</details>
 
 
 
@@ -259,3 +284,24 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         </b></u></i>
     </h2>
 </head>
+
+1. ***ALIAS CREATION***
+    - ***OPEN "zshrc" OR ".zshrc" FILES***
+    <h5>If you don't know what "zshrc" or ".zshrc" is, please follow the "CLI PROMPT MODIFICATION" instructions for the global(zshrc) or user(.zshrc) files</h5>
+    - ***CREATE ALIAS***
+        - *INPUT IN **zshrc** OR **.zshrc** FILE*:
+        ```
+        alias What-id-you-want-changed="What-you-want-the-id-to-run"
+        ```
+        - *OUTPUT IN **TERMINAL***:
+        Runs your specific value paired with it's respective id.
+    - ***EXAMPLE ALIAS***
+        - *INPUT IN **zshrc** FILE*:
+        <img width="125" alt="Screenshot 2023-01-28 at 16 46 35" src="https://user-images.githubusercontent.com/122934893/215294580-66ba4c09-506a-4ac9-b5b6-b364feab8333.png">
+        - *OUTPUT IN **TERMINAL***:
+        <img width="561" alt="Screenshot 2023-01-28 at 16 43 19" src="https://user-images.githubusercontent.com/122934893/215294505-54c48957-0c54-468e-9a09-a01df651bcf4.png">
+2. ***ALIAS LIST***
+    - *INPUT IN **TERMINAL***:
+    <img width="176" alt="Screenshot 2023-01-28 at 16 55 40" src="https://user-images.githubusercontent.com/122934893/215294993-d5322211-eb97-4932-a13e-057f26cb4ed0.png">
+    - *OUTPUT IN **TERMINAL***:
+    <img width="363" alt="Screenshot 2023-01-28 at 16 56 00" src="https://user-images.githubusercontent.com/122934893/215295013-f0f33e37-3c6d-470c-8b9b-67602af02432.png">
