@@ -5,6 +5,11 @@ THIS FILE IS FOR A QUICK STEP-BY-STEP PROCESS TO PERSONALIZING CLI(COMMAND LINE 
     - INSTRUCTIONS WILL GENERALLY BE (INPUT -> OUTPUT) FORMAT
 FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIEVE BETTER UNDERSTANDING FOR YOU AND HOPEFULLY ANYONE ELSE YOU EDUCATE ON THIS PARTICULAR TOPIC
 --->
+
+
+
+
+
 <!--- File Title Header -->
 <head>
     <h1 align="center">
@@ -14,18 +19,32 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
     <br><br>
 </head>
 
+
+
+
+
 <!--- CLI Table of Contents -->
-<a id="Prompt_Modification">Jump to CLI Prompt Modification</a>
+<ul>
+    <li><a href="#Prompt_Modification">CLI Prompt Modification</li>
+    <li><a href="#Alias_Modification">CLI Alias Modification</li>
+</ul>
+
+
+
+
 
 <!--- CLI Prompt Modification -->
+<button type="button" class="collapsible">Open Collapsible</button>
+<div class="content">
+<a id="Prompt_Modification"></a>
 <head>
     <h2 align="center">
         <b><u><i>
         CLI PROMPT MODIFICATION
         </b></u></i>
-    <br><br>
     </h2>
 </head>
+<br>
 
 1. ***GLOBAL MODIFICATION (SETTINGS WILL APPLY TO ALL USERS)***
     - ***LOCATE global "zshrc" file***
@@ -196,7 +215,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             %S{part you want highlighted}%s
             ```
         - **CHANGE COLOR**:
-        <a href="#Prompt_Modification">Test</a>
+        <a href="#Prompt_Modification" target="_parent">Test</a>
             ```
             FOREGROUND:
             %F{color you want}{part you want this color to apply}%f
@@ -223,3 +242,18 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             ```
             - *OUTPUT IN **TERMINAL***:
             ![Image](https://user-images.githubusercontent.com/122934893/215004109-e646e190-83a3-4eda-93a9-83580dd3bb2e.png)
+</div>
+
+
+
+
+
+<!--- CLI Alias Modification -->
+<a id="Alias_Modification"></a>
+<head>
+    <h2 align="center">
+        <b><u><i>
+        CLI ALIAS MODIFICATION
+        </b></u></i>
+    </h2>
+</head>
