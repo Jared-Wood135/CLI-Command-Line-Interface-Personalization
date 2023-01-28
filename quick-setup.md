@@ -15,14 +15,9 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 </head>
 
 <!--- CLI Table of Contents -->
-<ol>
-    <li>CLI Prompt Modification</li>
-    <a id="Prompt Modification">Jump to CLI Prompt Modification</a>
-    <li>CLI Alias Creation</li>
-</ol>
+<a id="Prompt_Modification">Jump to CLI Prompt Modification</a>
 
 <!--- CLI Prompt Modification -->
-<a href="#Prompt Modification">Test</a>
 <head>
     <h2 align="center">
         <b><u><i>
@@ -201,6 +196,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             %S{part you want highlighted}%s
             ```
         - **CHANGE COLOR**:
+        <a href="#Prompt Modification">Test</a>
             ```
             FOREGROUND:
             %F{color you want}{part you want this color to apply}%f
