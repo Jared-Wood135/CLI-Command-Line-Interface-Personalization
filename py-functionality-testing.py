@@ -1,1 +1,3 @@
-print("This is a test")
+import os
+
+os.chdir('~/Desktop')
