@@ -34,17 +34,11 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 <ul>
     <h4 align="center">
         <b>
-            <li>CLI PROMPT MODIFICATION</li>
-            <li>CLI ALIAS MODIFICATION</li>
+            <li><a href="#Prompt_Modification">CLI PROMPT MODIFICATION</a href></li>
+            <li><a href="#Alias_Modification">CLI ALIAS MODIFICATION</a href></li>
         </b>
     </h4>
 </ul>
-<!--- Alternate Navigation Method If Necessary
-<ul>
-    <li><a href="#Prompt_Modification">CLI Prompt Modification</li>
-    <li><a href="#Alias_Modification">CLI Alias Modification</li>
-</ul>
--->
 
 
 
@@ -78,6 +72,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         </h5>
     </p>
     </details>
+
     - ***LOCATE GLOBAL "zshrc" FILE***
         - *INPUT IN **TERMINAL***:
         ```
@@ -157,6 +152,15 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
             - *OUTPUT IN **TERMINAL***:
             ![Image](https://user-images.githubusercontent.com/122934893/215004109-e646e190-83a3-4eda-93a9-83580dd3bb2e.png)
 2. ***USER MODIFICATION (SETTINGS WILL APPLY TO SPECIFIC USER)***
+    <details>
+    <p>
+    <summary>EXPLANATION</summary>
+    <h5 align="center">
+    Your terminal's user file is located at your "~" directory as ".zshrc".  Keep in mind that changes in your <b><i>USER</b></i> file will apply to <b><i>THE USER</b></i>.  Think of this file as a settings page for a user's terminal.  Everytime you open the  user's terminal, this file is read to dicatate key bindings, prompt structure, aliases if any, and much more.  In short, if you want to personalize your CLI without any online downloads, you typically will have to modify this file.  By default, a user will not typically have this file so you must create this file which is outlined in the instructions below.
+    </h5>
+    </p>
+    </details>
+
     - ***LOCATE USER ".zshrc" file**
         - *INPUT IN **TERMINAL***:
         ```
@@ -287,20 +291,28 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 </head>
 
 1. ***ALIAS CREATION***
-    - ***OPEN "zshrc" OR ".zshrc" FILES***
+<details>
+<p>
+<summary>EXPLANATION</summary>
+    <h5 align="center">
+    Aliases are essentially shortcuts that you can define and later use in your terminal.  Creating aliases are very quick and easy to create and there's no limit to how many you can have granted that they're formated properly and you remember them.
+</details>
+</p>
+
+- ***OPEN "zshrc" OR ".zshrc" FILES***
     <h5>If you don't know what "zshrc" or ".zshrc" is, please follow the "CLI PROMPT MODIFICATION" instructions for the global(zshrc) or user(.zshrc) files</h5>
-    - ***CREATE ALIAS***
-        - *INPUT IN **zshrc** OR **.zshrc** FILE*:
-        ```
-        alias What-id-you-want-changed="What-you-want-the-id-to-run"
-        ```
-        - *OUTPUT IN **TERMINAL***:
-        Runs your specific value paired with it's respective id.
+- ***CREATE ALIAS***
+    - *INPUT IN **zshrc** OR **.zshrc** FILE*:
+     ```
+    alias What-id-you-want-changed="What-you-want-the-id-to-run"
+    ```
+    - *OUTPUT IN **TERMINAL***:
+    Runs your specific value paired with it's respective id.
     - ***EXAMPLE ALIAS***
-        - *INPUT IN **zshrc** FILE*:
-        <img width="125" alt="Screenshot 2023-01-28 at 16 46 35" src="https://user-images.githubusercontent.com/122934893/215294580-66ba4c09-506a-4ac9-b5b6-b364feab8333.png">
-        - *OUTPUT IN **TERMINAL***:
-        <img width="561" alt="Screenshot 2023-01-28 at 16 43 19" src="https://user-images.githubusercontent.com/122934893/215294505-54c48957-0c54-468e-9a09-a01df651bcf4.png">
+    - *INPUT IN **zshrc** FILE*:
+    <img width="125" alt="Screenshot 2023-01-28 at 16 46 35" src="https://user-images.githubusercontent.com/122934893/215294580-66ba4c09-506a-4ac9-b5b6-b364feab8333.png">
+    - *OUTPUT IN **TERMINAL***:
+    <img width="561" alt="Screenshot 2023-01-28 at 16 43 19" src="https://user-images.githubusercontent.com/122934893/215294505-54c48957-0c54-468e-9a09-a01df651bcf4.png">
 2. ***ALIAS LIST***
     - *INPUT IN **TERMINAL***:
     <img width="176" alt="Screenshot 2023-01-28 at 16 55 40" src="https://user-images.githubusercontent.com/122934893/215294993-d5322211-eb97-4932-a13e-057f26cb4ed0.png">
