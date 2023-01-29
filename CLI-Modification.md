@@ -27,7 +27,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 <head>
     <h2 align="center">
         <b>
-        TABLE OF CONTENTS
+        <a id="tableofcontents"></a>TABLE OF CONTENTS
         </b>
     </h2>
 </head>
@@ -54,6 +54,7 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
     </h2>
 </head>
 <br>
+<a href="#tableofcontents">Back to Table of Contents</a href>
     <details>
     <p>
     <summary>EXPLANATION</summary>
@@ -289,8 +290,8 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         </b></u></i>
     </h2>
 </head>
-
-1. ***ALIAS CREATION***
+<br>
+<a href="#tableofcontents">Back to Table of Contents</a href>
 <details>
 <p>
 <summary>EXPLANATION</summary>
@@ -299,22 +300,27 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
 </details>
 </p>
 
-- ***OPEN "zshrc" OR ".zshrc" FILES***
-    <h5>If you don't know what "zshrc" or ".zshrc" is, please follow the "CLI PROMPT MODIFICATION" instructions for the global(zshrc) or user(.zshrc) files</h5>
-- ***CREATE ALIAS***
-    - *INPUT IN **zshrc** OR **.zshrc** FILE*:
-     ```
-    alias What-id-you-want-changed="What-you-want-the-id-to-run"
-    ```
-    - *OUTPUT IN **TERMINAL***:
-    Runs your specific value paired with it's respective id.
+1. ***ALIAS CREATION***
+
+    - ***OPEN "zshrc" OR ".zshrc" FILES***
+        <h5>If you don't know what "zshrc" or ".zshrc" is, please follow the "CLI PROMPT MODIFICATION" instructions for the global(zshrc) or user(.zshrc) files</h5>
+    - ***CREATE ALIAS***
+        - *INPUT IN **zshrc** OR **.zshrc** FILE*:
+        ```
+        alias What-id-you-want-changed="What-you-want-the-id-to-run"
+        ```
+        - *OUTPUT IN **TERMINAL***:
+        Runs your specific value paired with it's respective id.
     - ***EXAMPLE ALIAS***
-    - *INPUT IN **zshrc** FILE*:
-    <img width="125" alt="Screenshot 2023-01-28 at 16 46 35" src="https://user-images.githubusercontent.com/122934893/215294580-66ba4c09-506a-4ac9-b5b6-b364feab8333.png">
-    - *OUTPUT IN **TERMINAL***:
-    <img width="561" alt="Screenshot 2023-01-28 at 16 43 19" src="https://user-images.githubusercontent.com/122934893/215294505-54c48957-0c54-468e-9a09-a01df651bcf4.png">
+        - *INPUT IN **zshrc** FILE*:
+        <img width="125" alt="Screenshot 2023-01-28 at 16 46 35" src="https://user-images.githubusercontent.com/122934893/215294580-66ba4c09-506a-4ac9-b5b6-b364feab8333.png">
+
+        - *OUTPUT IN **TERMINAL***:
+        <img width="561" alt="Screenshot 2023-01-28 at 16 43 19" src="https://user-images.githubusercontent.com/122934893/215294505-54c48957-0c54-468e-9a09-a01df651bcf4.png">
+
 2. ***ALIAS LIST***
     - *INPUT IN **TERMINAL***:
     <img width="176" alt="Screenshot 2023-01-28 at 16 55 40" src="https://user-images.githubusercontent.com/122934893/215294993-d5322211-eb97-4932-a13e-057f26cb4ed0.png">
+
     - *OUTPUT IN **TERMINAL***:
     <img width="363" alt="Screenshot 2023-01-28 at 16 56 00" src="https://user-images.githubusercontent.com/122934893/215295013-f0f33e37-3c6d-470c-8b9b-67602af02432.png">
