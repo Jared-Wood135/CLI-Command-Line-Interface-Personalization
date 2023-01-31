@@ -44,5 +44,4 @@ def find_hiddentest_file():
 home = os.path.expanduser( '~' )
 os.chdir("codeup-data-science/CLI-Command-Line-Interface-Personalization")
 print(os.getcwd())
-os.open("test", os.O_WRONLY)
-print(os.open("test", os.O_RDONLY))
+f = os.open("test", os.O_WRONLY)
