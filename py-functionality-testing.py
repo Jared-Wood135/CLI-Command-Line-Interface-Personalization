@@ -27,12 +27,22 @@ def find_hiddentest_file():
     os.chdir("Desktop")
     print(os.getcwd())
     print(os.path.isfile("test"))
+    if os.path.isfile("test"):
+        print("You have an existing file")
+        x = input("Would you like to change this file? (Yes/No)")
+        if x == "Yes":
+            print("Opening 'test' file now")
+            os.open("home/Desktop/test")
+        elif x == "No":
+            print("See you later!")
+        else:
+            print("I'm sorry, would you like to change this file? (Yes/No)")
 
-def yes():
-    if find_hiddentest_file is True:
-        print("It exists")
     else:
         print("It does not exist")
-    
-find_hiddentest_file()
-yes()
+
+home = os.path.expanduser( '~' )
+os.chdir("codeup-data-science/CLI-Command-Line-Interface-Personalization")
+print(os.getcwd())
+os.open("test", os.O_WRONLY)
+print(os.open("test", os.O_RDONLY))
