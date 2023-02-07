@@ -39,9 +39,13 @@ FUTURE FILES WILL BE MADE FOR BETTER FOLLOW-ALONG-INSTRUCTIONS IN ORDER TO ACHIE
         </b>
     </h4>
 </ul>
-
-
-
+<details>
+<p>
+<summary>IMPORTANT:</summary>
+    <h5 align="center">
+    In order to see any changes from a file, you must either open a new window or type in source .zshrc.
+</p>
+</details>
 
 
 <!--- CLI Prompt Modification -->
