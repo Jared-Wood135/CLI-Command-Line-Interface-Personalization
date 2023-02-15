@@ -45,3 +45,45 @@ home = os.path.expanduser( '~' )
 os.chdir("codeup-data-science/CLI-Command-Line-Interface-Personalization")
 print(os.getcwd())
 f = os.open("test", os.O_WRONLY)
+
+
+home = os.path.expanduser( '~' )
+os.chdir(home)
+with open('.zshrc', 'r') as f:
+    reader = f.readlines()
+    test = ([row for row in reader if 'PS1' in row])
+    test
+# =======================================================================================================
+# CLI REFERENCES
+# =======================================================================================================
+
+# ==========> DEFAULT PROMPT LINE <==========
+'''
+PS1="%n@%m %1~ %# "
+
+%n - HOST
+%m - USER
+%1 - CURRENT DIRECTORY
+~ - HOME
+%# - PROMPT ENDER
+'''
+
+# ==========> COMMANDS <==========
+'''
+%B{Input}%b ==> Boldens Input
+%S{Input}%s ==> Highlights Input
+%F{COLOR}{Input}%f ==> Changes Color of Input
+%K{COLOR}{Input}%k ==> Changes Color of Background
+'''
+
+# ==========> COLOR OPTIONS <==========
+'''
+green
+red
+black
+white
+cyan
+magenta
+yellow
+gray
+'''
