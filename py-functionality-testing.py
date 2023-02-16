@@ -1,60 +1,34 @@
-import os
-
-# Changes directory successfully
-(os.chdir("/private/etc/"))
-print(os.getcwd())
-
-# Return bool if file exists
-print(os.path.isfile("zshrc"))
-
-#Opens file
-#os.open("/private/etc/zshrc")
-
-#Finds home directory
-home = os.path.expanduser( '~' )
-print(home)
-os.chdir(home)
-print(os.getcwd())
-
-#test
-#f = open("/private/etc/zshrc")
-#print(f.read())
-
-# Find then create file test
-def find_hiddentest_file():
-    home = os.path.expanduser( '~' )
-    os.chdir(home)
-    os.chdir("Desktop")
-    print(os.getcwd())
-    print(os.path.isfile("test"))
-    if os.path.isfile("test"):
-        print("You have an existing file")
-        x = input("Would you like to change this file? (Yes/No)")
-        if x == "Yes":
-            print("Opening 'test' file now")
-            os.open("home/Desktop/test")
-        elif x == "No":
-            print("See you later!")
-        else:
-            print("I'm sorry, would you like to change this file? (Yes/No)")
-
-    else:
-        print("It does not exist")
-
-home = os.path.expanduser( '~' )
-os.chdir("codeup-data-science/CLI-Command-Line-Interface-Personalization")
-print(os.getcwd())
-f = os.open("test", os.O_WRONLY)
-
-
-home = os.path.expanduser( '~' )
-os.chdir(home)
-with open('.zshrc', 'r') as f:
-    reader = f.readlines()
-    test = ([row for row in reader if 'PS1' in row])
-    test
 # =======================================================================================================
-# CLI REFERENCES
+# TABLE OF CONTENTS START
+# =======================================================================================================
+
+'''
+-   ORIENTATION
+-   CLI REFERENCES
+    -   Default Prompt Line
+    -   Commands
+    -   Color Options
+-   FUNCTIONS
+    -   Import For Functions
+    -   Colors
+-   END PRODUCT
+'''
+
+# =======================================================================================================
+# TABLE OF CONTENTS END
+# TABLE OF CONTENTS TO ORIENTATION
+# ORIENTATION START
+# =======================================================================================================
+
+'''
+Welcome to my script that makes personalizing your command line easy by simply running this 
+script and following the input prompts!
+'''
+
+# =======================================================================================================
+# ORIENTATION END
+# ORIENTATION TO CLI REFERENCES
+# CLI REFERENCES START
 # =======================================================================================================
 
 # ==========> DEFAULT PROMPT LINE <==========
@@ -87,3 +61,38 @@ magenta
 yellow
 gray
 '''
+
+# =======================================================================================================
+# CLI REFERENCES END
+# CLI REFERENCES TO FUNCTIONS
+# FUNCTIONS START
+# =======================================================================================================
+
+# ==========> IMPORT FOR FUNCTIONS <==========
+import os
+
+# ==========> MAIN MENU <==========
+home = os.path.expanduser( '~' )
+os.chdir(home)
+with open('.zshrc', 'r') as f:
+    reader = f.readlines()
+    test = ([row for row in reader if 'PS1' in row])
+    test
+
+# ==========> COLORS <==========
+def colors():
+    print(f"{'Color' : ^15}|{'Input' : ^15}")
+    print(f"{'---------------' : ^15}|{'---------------' : ^15}")
+    print
+
+# =======================================================================================================
+# FUNCTIONS END
+# FUNCTIONS TO END PRODUCT
+# END PRODUCT START
+# =======================================================================================================
+
+
+
+# =======================================================================================================
+# END PRODUCT END
+# =======================================================================================================
