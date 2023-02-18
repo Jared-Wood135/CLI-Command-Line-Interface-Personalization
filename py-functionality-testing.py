@@ -120,7 +120,7 @@ def cli_mod():
                 clear()
                 print("Creating \033[33m'file'\033[0m...\n")
                 with open('test', 'w') as f:
-                    f.writelines
+                    f.writelines('Test')
                 print("\033[33m'file'\033[0m created...\n")
             elif create_file.lower() == 'n':
                 clear()
@@ -130,9 +130,49 @@ def cli_mod():
                 clear()
         elif os.path.exists('test') == True:
             clear()
-            print("It exists")
+            with open('test', 'a') as f:
+                lines = f.writelines([line.replace('Test', 'YaYeet') for line in f if line.startswith('Test')])
+                lines
+                test = ([line for line in lines if line.lower().startswith('test')])
+                testw100 = ([line.replace('Test', 'YaYeet') for line in test])
+                print(testw100)
+                break
             break
+            while True:
+                with open('test', 'r') as f:
+                    lines = f.readlines
+
 cli_mod()
+
+# ==========> YE OLDE TESTING SITE <==========
+import re
+home = os.path.expanduser('~')
+os.chdir(home)
+os.chdir('Desktop')
+ps1 = os.environ.get('PS1', '')
+username = os.environ.get('USER', '')
+hostname = os.environ.get('HOSTNAME', '')
+user_re = re.compile(r'\\u')
+host_re = re.compile(r'\\h')
+user = user_re.search(ps1).group(0) if user_re.search(ps1) else ''
+host = host_re.search(ps1).group(0) if  host_re.search(ps1) else ''
+
+print(f"User: {username}, Host: {hostname}")
+print(f"User in PS1: {user}, Host in PS1: {host}")
+
+ps1 = os.environ.get('PS1', '')
+segments = ps1.split('\\u')
+if len(segments) > 1:
+    segments = [segments[0]] + [s.split('\\h')[1] for s in segments[1:]]
+else:
+    segments = ps1.split('\\h')
+username = os.environ.get('USER', '')
+hostname = os.environ.get('HOSTNAME', '')
+if len(segments) > 1:
+    username = segments[1].split(segments[0])[-1]
+    hostname = segments[1].split(segments[2])[0]
+print(f"User: {username}, Host: {hostname}")
+
 # ==========> COLORS <==========
 '''
 Outputs a list of all the colors available for use
