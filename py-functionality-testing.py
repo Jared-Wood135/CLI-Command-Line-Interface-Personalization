@@ -111,37 +111,46 @@ def menu():
 menu()
 
 # ==========> MODIFICATION <==========
+'''
+Modify the command prompt of the command line interface.
+'''
 def cli_mod():
     clear()
     while True:
+
+        # vvv IF FILE DOESN'T EXIST vvv
         if os.path.exists('test') == False:
             create_file = input("\033[33m'test'\033[0m file not found...\nWould you like to create \033[33m'test'\033[0m file? \033[33m(Y/N)\033[0m\n")
             if create_file.lower() == 'y':
                 clear()
                 print("Creating \033[33m'file'\033[0m...\n")
                 with open('test', 'w') as f:
-                    f.writelines('Test')
+                    f.writelines('# =====> PROMPT <=====\n# Default Prompt:\n# PS1="%n@%m %1~ %# "\n\n# Current Prompt:\nPS1="%n@%m %1~ %# "\n\n\n# =====> ALIASES <=====')
+                    f.flush()
+                    f.close()
                 print("\033[33m'file'\033[0m created...\n")
+                break
             elif create_file.lower() == 'n':
                 clear()
-                print("Returning to \033[33m'Main Menu'\033[0m")
+                print("Returning to \033[33m'Main Menu'\033[0m\n")
                 break
             else:
                 clear()
+                print("Invalid Input...\n")
+
+        # vvv IF FILE EXISTS vvv        
         elif os.path.exists('test') == True:
             clear()
-            with open('test', 'a') as f:
-                lines = f.writelines([line.replace('Test', 'YaYeet') for line in f if line.startswith('Test')])
-                lines
-                test = ([line for line in lines if line.lower().startswith('test')])
-                testw100 = ([line.replace('Test', 'YaYeet') for line in test])
-                print(testw100)
+            additional_lines = ['\nAdditional line 1\n', 'Additional line 2\n']
+            with open('test', 'r') as f:
+                lines = f.readlines()
+            for i in range(len(lines)):
+                if 'Test' in lines[i]:
+                    lines[i+1:i+1] = additional_lines
+            with open('test', 'w') as f:
+                f.writelines(lines)
+                print(lines)
                 break
-            break
-            while True:
-                with open('test', 'r') as f:
-                    lines = f.readlines
-
 cli_mod()
 
 # ==========> YE OLDE TESTING SITE <==========
