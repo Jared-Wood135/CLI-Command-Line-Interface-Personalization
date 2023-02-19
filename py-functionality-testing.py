@@ -143,17 +143,30 @@ def cli_mod():
             clear()
 
             # vvv STARTING PROMPT INPUT vvv
+            print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
             host_user = input("What would you like your \033[33mstarting prompt\033[0m to be?\n")
             
             # vvv STARTING PROMPT COLOR vvv
+            clear()
             colors()
+            print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
             host_user_color = input("What \033[33mcolor\033[0m do you want for your \033[33mstarting prompt\033[0m?\n")
             
+            # vvv WORKING DIRECTORY COLOR vvv
+            clear()
+            print('"HOST@USER \033[33m%1~\033[0m %# "\n')
+            colors()
+            cwd_color = input("What \033[33mcolor\033[0m do you want for your \033[33mcurrent working directory\033[0m?\n")
+            
             # vvv ENDING PROMPT INPUT vvv
+            clear()
+            print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
             end_prompt = input("What would you like your \033[33mending prompt\033[0m to be?\n")
             
             # vvv ENDING PROMPT COLOR vvv
+            clear()
             colors()
+            print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
             end_prompt_color = input("What \033[33mcolor\033[0m do you want for your \033[33mending prompt\033[0m?\n")
             
             # vvv CREATING NEW PS1 vvv
