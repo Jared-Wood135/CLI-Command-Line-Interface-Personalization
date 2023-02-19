@@ -141,12 +141,27 @@ def cli_mod():
         # vvv IF FILE EXISTS vvv        
         elif os.path.exists('test') == True:
             clear()
-            additional_lines = ['\nAdditional line 1\n', 'Additional line 2\n']
+
+            # vvv STARTING PROMPT INPUT vvv
+            host_user = input("What would you like your \033[33mstarting prompt\033[0m to be?\n")
+            
+            # vvv STARTING PROMPT COLOR vvv
+            colors()
+            host_user_color = input("What \033[33mcolor\033[0m do you want for your \033[33mstarting prompt\033[0m?\n")
+            
+            # vvv ENDING PROMPT INPUT vvv
+            end_prompt = input("What would you like your \033[33mending prompt\033[0m to be?\n")
+            
+            # vvv ENDING PROMPT COLOR vvv
+            colors()
+            end_prompt_color = input("What \033[33mcolor\033[0m do you want for your \033[33mending prompt\033[0m?\n")
+            
+            # vvv CREATING NEW PS1 vvv
             with open('test', 'r') as f:
                 lines = f.readlines()
             for i in range(len(lines)):
-                if 'Test' in lines[i]:
-                    lines[i+1:i+1] = additional_lines
+                if lines[i].startswith('PS1'):
+                    lines[i] = lines[i].replace(lines[i], (f"PS1=\"{host_user} %1~ {end_prompt} \""))
             with open('test', 'w') as f:
                 f.writelines(lines)
                 print(lines)
