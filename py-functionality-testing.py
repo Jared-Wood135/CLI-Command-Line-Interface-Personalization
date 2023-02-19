@@ -116,6 +116,9 @@ Modify the command prompt of the command line interface.
 '''
 def cli_mod():
     clear()
+    colors_list = ['black', 'blue', 'cyan', 'green', 'magenta', 'red', 'white', 'yellow']
+    misc_list = ['bold', 'highlight']
+    error = "\033[31mInvalid Input...\033[0m\n"
     while True:
 
         # vvv IF FILE DOESN'T EXIST vvv
@@ -136,28 +139,64 @@ def cli_mod():
                 break
             else:
                 clear()
-                print("Invalid Input...\n")
+                print(error)
 
         # vvv IF FILE EXISTS vvv        
         elif os.path.exists('test') == True:
-            clear()
 
             # vvv STARTING PROMPT INPUT vvv
+            clear()
             print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
             host_user = input("What would you like your \033[33mstarting prompt\033[0m to be?\n")
             
             # vvv STARTING PROMPT COLOR vvv
             clear()
-            colors()
-            print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
-            host_user_color = input("What \033[33mcolor\033[0m do you want for your \033[33mstarting prompt\033[0m?\n")
-            
+            while True:
+                colors()
+                print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
+                host_user_color = input("What \033[33mcolor\033[0m do you want for your \033[33mstarting prompt\033[0m?\n")
+                if host_user_color.lower() in colors_list:
+                    break
+                else:
+                    clear()
+                    print(error)
+
+            # vvv STARTING PROMPT MISC vvv
+            clear()
+            while True:
+                misc()
+                print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
+                host_user_misc = input("What \033[33mmodifier\033[0m would you like to apply to your \033[33mstarting prompt\033[0m?\n")
+                if host_user_misc in misc_list:
+                    break
+                else:
+                    clear()
+                    print(error)
+
             # vvv WORKING DIRECTORY COLOR vvv
             clear()
-            print('"HOST@USER \033[33m%1~\033[0m %# "\n')
-            colors()
-            cwd_color = input("What \033[33mcolor\033[0m do you want for your \033[33mcurrent working directory\033[0m?\n")
-            
+            while True:
+                print('"HOST@USER \033[33m%1~\033[0m %# "\n')
+                colors()
+                cwd_color = input("What \033[33mcolor\033[0m do you want for your \033[33mcurrent working directory\033[0m?\n")
+                if cwd_color in colors_list:
+                    break
+                else:
+                    clear()
+                    print(error)
+
+            # vvv WORKING DIRECTORY MISC vvv
+            clear()
+            while True:
+                misc()
+                print('"HOST@USER \033[33m%1~\033[0m %# "\n')
+                cwd_misc = input("What \033[33mmodifier\033[0m would you like to apply to your \033[33mcurrent working directory\033[0m?\n")
+                if cwd_misc in misc_list:
+                    break
+                else:
+                    clear()
+                    print(error)
+
             # vvv ENDING PROMPT INPUT vvv
             clear()
             print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
@@ -165,10 +204,28 @@ def cli_mod():
             
             # vvv ENDING PROMPT COLOR vvv
             clear()
-            colors()
-            print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
-            end_prompt_color = input("What \033[33mcolor\033[0m do you want for your \033[33mending prompt\033[0m?\n")
-            
+            while True:
+                colors()
+                print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
+                end_prompt_color = input("What \033[33mcolor\033[0m do you want for your \033[33mending prompt\033[0m?\n")
+                if end_prompt_color in colors_list:
+                    break
+                else:
+                    clear()
+                    print(error)
+
+            # vvv ENDING PROMPT MISC vvv
+            clear()
+            while True:
+                misc()
+                print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
+                end_prompt_misc = input("What \033[33mmodifier\033[0m do you want for your \033[33mending prompt\033[0m?\n")
+                if end_prompt_misc in misc_list:
+                    break
+                else:
+                    clear()
+                    print(error)
+
             # vvv CREATING NEW PS1 vvv
             with open('test', 'r') as f:
                 lines = f.readlines()
@@ -210,7 +267,18 @@ if len(segments) > 1:
     hostname = segments[1].split(segments[2])[0]
 print(f"User: {username}, Host: {hostname}")
 
-# ==========> COLORS <==========
+# ==========> MISC FUNCTION <==========
+'''
+Outputs a list of additional modifications for the command prompt
+'''
+def misc():
+    print(f"{'Modifier' : ^20}|{'Input' : ^20}")
+    print(f"{'--------------------' : ^20}|{'--------------------' : ^20}")
+    print(f"{'BOLD TEXT' : ^20}|{'bold' : ^20}")
+    print(f"{'HIGHLIGHTED TEXT' : ^20}|{'highlight' : ^20}")
+misc()
+
+# ==========> COLORS FUNCTION <==========
 '''
 Outputs a list of all the colors available for use
 '''
