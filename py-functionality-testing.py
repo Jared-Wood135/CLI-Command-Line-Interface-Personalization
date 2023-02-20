@@ -338,12 +338,25 @@ def alias_mod():
     clear()
     with open('.zshrc', 'r') as f:
         lines = f.readlines()
+    if '# =====> ALIASES <=====\n' not in lines:
+        lines.append('\n\n# =====> ALIASES <=====\n')
+        with open('.zshrc', 'w') as f:
+            f.writelines(lines)
+        with open('.zshrc', 'r') as f:
+            lines = f.readlines()
+            for i in range(len(lines)):
+                if lines[i].startswith('# =====> ALIASES <====='):
+                    lines[i] = lines[i].replace(lines[i], (lines[i] + '\nalias ' + alias_name + '=\'' + alias_output + '\''))
+                    with open('.zshrc', 'w') as f:
+                        f.writelines(lines)
+                        print(f"\033[32mSuccessfully created alias\033[0m \033[33m{alias_name}\033[0m \033[32mto output\033[0m \033[33m{alias_output}\033[0m\n")
+    else:
         for i in range(len(lines)):
             if lines[i].startswith('# =====> ALIASES <====='):
                 lines[i] = lines[i].replace(lines[i], (lines[i] + '\nalias ' + alias_name + '=\'' + alias_output + '\''))
-    with open('.zshrc', 'w') as f:
-        f.writelines(lines)
-        print(f"\033[32mSuccessfully created alias\033[0m \033[33m{alias_name}\033[0m \033[32mcreated to output\033[0m \033[33m{alias_output}\033[0m\n")
+                with open('.zshrc', 'w') as f:
+                    f.writelines(lines)
+                    print(f"\033[32mSuccessfully created alias\033[0m \033[33m{alias_name}\033[0m \033[32mto output\033[0m \033[33m{alias_output}\033[0m\n")
 
 # ==========> MISC LIST FUNCTION <==========
 '''
