@@ -4,10 +4,6 @@
 
 '''
 -   ORIENTATION
--   CLI REFERENCES
-    -   Default Prompt Line
-    -   Commands
-    -   Color Options
 -   FUNCTIONS
     -   Import For Functions
     -   Main Menu
@@ -32,44 +28,7 @@ script and following the input prompts!
 
 # =======================================================================================================
 # ORIENTATION END
-# ORIENTATION TO CLI REFERENCES
-# CLI REFERENCES START
-# =======================================================================================================
-
-# ==========> DEFAULT PROMPT LINE <==========
-'''
-PS1="%n@%m %1~ %# "
-
-%n - HOST
-%m - USER
-%1 - CURRENT DIRECTORY
-~ - HOME
-%# - PROMPT ENDER
-'''
-
-# ==========> COMMANDS <==========
-'''
-%B{Input}%b ==> Boldens Input
-%S{Input}%s ==> Highlights Input
-%F{COLOR}{Input}%f ==> Changes Color of Input
-%K{COLOR}{Input}%k ==> Changes Color of Background
-'''
-
-# ==========> COLOR OPTIONS <==========
-'''
-green
-red
-black
-white
-cyan
-magenta
-yellow
-gray
-'''
-
-# =======================================================================================================
-# CLI REFERENCES END
-# CLI REFERENCES TO FUNCTIONS
+# ORIENTATION TO FUNCTIONS
 # FUNCTIONS START
 # =======================================================================================================
 
@@ -328,7 +287,7 @@ def cli_mod():
 
 # ==========> ALIAS MODIFICATION FUNCTION <==========
 '''
-Add aliases to file
+Add aliases to LOCAL .zshrc file
 '''
 def alias_mod():
     clear()
