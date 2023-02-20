@@ -35,7 +35,7 @@ and effectiveness when utilizing CLI.
     <h5>
         <li>Instructional Documentation</li>
         <li>Python Scripts To Make Modification Easier</li>
-        <li>Image References For Instucitonal Purposes</li>
+        <li>Image References For Instructional Purposes</li>
     </h5>
 </ul>
 <br>
