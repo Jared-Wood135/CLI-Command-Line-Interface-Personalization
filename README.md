@@ -36,7 +36,6 @@ and effectiveness when utilizing CLI.
         <li>Instructional Documentation</li>
         <li>Python Scripts To Make Modification Easier</li>
         <li>Image References For Instucitonal Purposes</li>
-        <li>Files For Testing Purposes</li>
     </h5>
 </ul>
 <br>
@@ -54,6 +53,7 @@ and effectiveness when utilizing CLI.
     <h5>
         <li>CLI Prompt Modification - Instructional</li>
         <li>CLI Alias Creation - Instructional</li>
+        <li>CLI Prompt/Alias Mod - Script</li>
     </h5>
 </ul>
 <br>
@@ -70,19 +70,7 @@ and effectiveness when utilizing CLI.
 </head>
 <ul>
     <h5>
-        <li>CLI Prompt Modification - Script</li>
-        <li>CLI Alias Creation - Script</li>
+        <li>Nothing as of 20FEB2023</li>
     </h5>
 </ul>
 <br><br>
-
-
-
-
-
-<!-- Disclaimers -->
-<head>
-    <h1 align="center">
-        WORK-IN-PROGRESS
-    </h1>
-</head>
