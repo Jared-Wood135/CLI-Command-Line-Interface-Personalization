@@ -12,6 +12,7 @@
     -   Import For Functions
     -   Main Menu
     -   Prompt Line Modification
+    -   Alias Modification
     -   Misc List
     -   Colors List
     -   Clear Terminal
@@ -87,23 +88,22 @@ def menu():
     # vvv CHANGE DIRECTORY vvv
     home = os.path.expanduser( '~' )
     os.chdir(home)
-    os.chdir('Desktop')
 
     # vvv MAIN MENU LIST vvv
     clear()
     error = "\033[31mInvalid Input...\033[0m\n"
     while True:
         # vvv IF FILE DOESN'T EXIST vvv
-        if os.path.exists('test') == False:
-            create_file = input("\033[33m'test'\033[0m file not found...\nWould you like to create \033[33m'test'\033[0m file? \033[33m(Y/N)\033[0m\n")
+        if os.path.exists('.zshrc') == False:
+            create_file = input("\033[33m'.zshrc'\033[0m file not found...\nWould you like to create \033[33m'.zshrc'\033[0m file? \033[33m(Y/N)\033[0m\n")
             if create_file.lower() == 'y':
                 clear()
-                print("Creating \033[33m'file'\033[0m...\n")
-                with open('test', 'w') as f:
+                print("Creating \033[33m'.zshrc'\033[0m file...\n")
+                with open('.zshrc', 'w') as f:
                     f.writelines('# =====> PROMPT <=====\n# Default Prompt:\n# PS1="%n@%m %1~ %# "\n\n# Current Prompt:\nPS1="%n@%m %1~ %# "\n\n\n# =====> ALIASES <=====')
                     f.flush()
                     f.close()
-                print("\033[33m'file'\033[0m created...\n")
+                print("\033[33m'.zshrc'\033[0m file created...\n")
             elif create_file.lower() == 'n':
                 clear()
                 print("Have a great day!")
@@ -112,7 +112,7 @@ def menu():
                 clear()
                 print(error)
         # vvv IF FILE EXISTS vvv        
-        elif os.path.exists('test') == True:
+        elif os.path.exists('.zshrc') == True:
             print(
             '\033[33m==========> MAIN MENU <==========\033[0m\n\n',
             '\033[36m(1) Command Line Modification\033[0m\n',
@@ -126,7 +126,7 @@ def menu():
                 cli_mod()
             elif start == '2':
                 clear()
-                print('ALIAS MOD')
+                alias_mod()
             elif start == '3':
                 clear()
                 print('Have a great day!')
@@ -134,9 +134,8 @@ def menu():
             else:
                 clear()
                 print(error)
-menu()
 
-# ==========> PROMPT LINE MODIFICATION <==========
+# ==========> PROMPT LINE MODIFICATION FUNCTION <==========
 '''
 Modify the command prompt of the command line interface.
 '''
@@ -148,12 +147,12 @@ def cli_mod():
     while True:
 
         # vvv IF FILE DOESN'T EXIST vvv
-        if os.path.exists('test') == False:
-            create_file = input("\033[33m'test'\033[0m file not found...\nWould you like to create \033[33m'test'\033[0m file? \033[33m(Y/N)\033[0m\n")
+        if os.path.exists('.zshrc') == False:
+            create_file = input("\033[33m'.zshrc'\033[0m file not found...\nWould you like to create \033[33m'.zshrc'\033[0m file? \033[33m(Y/N)\033[0m\n")
             if create_file.lower() == 'y':
                 clear()
                 print("Creating \033[33m'file'\033[0m...\n")
-                with open('test', 'w') as f:
+                with open('.zshrc', 'w') as f:
                     f.writelines('# =====> PROMPT <=====\n# Default Prompt:\n# PS1="%n@%m %1~ %# "\n\n# Current Prompt:\nPS1="%n@%m %1~ %# "\n\n\n# =====> ALIASES <=====')
                     f.flush()
                     f.close()
@@ -168,7 +167,7 @@ def cli_mod():
                 print(error)
 
         # vvv IF FILE EXISTS vvv        
-        elif os.path.exists('test') == True:
+        elif os.path.exists('.zshrc') == True:
 
             # vvv STARTING PROMPT INPUT vvv
             clear()
@@ -317,45 +316,34 @@ def cli_mod():
 
             # vvv CREATING NEW PS1 vvv
             clear()
-            with open('test', 'r') as f:
+            with open('.zshrc', 'r') as f:
                 lines = f.readlines()
             for i in range(len(lines)):
                 if lines[i].startswith('PS1'):
                     lines[i] = lines[i].replace(lines[i], (f"PS1=\"{host_user_mod_begin}{host_user_result}{host_user_mod_end} {cwd_mod_begin}{cwd_result}{cwd_mod_end} {end_prompt_mod_begin}{end_prompt_result}{end_prompt_mod_end} \"\n"))
-            with open('test', 'w') as f:
+            with open('.zshrc', 'w') as f:
                 f.writelines(lines)
                 print("\033[32mCommand Line Prompt Line Changed Successfully\033[0m\n")
                 break
-cli_mod()
 
-# ==========> YE OLDE TESTING SITE <==========
-import re
-home = os.path.expanduser('~')
-os.chdir(home)
-os.chdir('Desktop')
-ps1 = os.environ.get('PS1', '')
-username = os.environ.get('USER', '')
-hostname = os.environ.get('HOSTNAME', '')
-user_re = re.compile(r'\\u')
-host_re = re.compile(r'\\h')
-user = user_re.search(ps1).group(0) if user_re.search(ps1) else ''
-host = host_re.search(ps1).group(0) if  host_re.search(ps1) else ''
-
-print(f"User: {username}, Host: {hostname}")
-print(f"User in PS1: {user}, Host in PS1: {host}")
-
-ps1 = os.environ.get('PS1', '')
-segments = ps1.split('\\u')
-if len(segments) > 1:
-    segments = [segments[0]] + [s.split('\\h')[1] for s in segments[1:]]
-else:
-    segments = ps1.split('\\h')
-username = os.environ.get('USER', '')
-hostname = os.environ.get('HOSTNAME', '')
-if len(segments) > 1:
-    username = segments[1].split(segments[0])[-1]
-    hostname = segments[1].split(segments[2])[0]
-print(f"User: {username}, Host: {hostname}")
+# ==========> ALIAS MODIFICATION FUNCTION <==========
+'''
+Add aliases to file
+'''
+def alias_mod():
+    clear()
+    alias_name = input("What \033[33mname\033[0m do you want to call your \033[33malias\033[0m?\n")
+    clear()
+    alias_output = input("What do you want \033[33m" + alias_name + "\033[0m to do?\n")
+    clear()
+    with open('.zshrc', 'r') as f:
+        lines = f.readlines()
+        for i in range(len(lines)):
+            if lines[i].startswith('# =====> ALIASES <====='):
+                lines[i] = lines[i].replace(lines[i], (lines[i] + '\nalias ' + alias_name + '=\'' + alias_output + '\''))
+    with open('.zshrc', 'w') as f:
+        f.writelines(lines)
+        print(f"\033[32mSuccessfully created alias\033[0m \033[33m{alias_name}\033[0m \033[32mcreated to output\033[0m \033[33m{alias_output}\033[0m\n")
 
 # ==========> MISC LIST FUNCTION <==========
 '''
