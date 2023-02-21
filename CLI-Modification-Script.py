@@ -103,10 +103,10 @@ def cli_mod():
     colors_list = ['black', 'blue', 'cyan', 'green', 'magenta', 'red', 'white', 'yellow', 'none']
     misc_list = ['bold', 'highlight', 'both', 'none']
     error = "\033[31mInvalid Input...\033[0m\n"
-    while True:
 
-        # vvv IF FILE DOESN'T EXIST vvv
-        if os.path.exists('.zshrc') == False:
+    # vvv IF FILE DOESN'T EXIST vvv
+    if os.path.exists('.zshrc') == False:
+        while True:
             create_file = input("\033[33m'.zshrc'\033[0m file not found...\nWould you like to create \033[33m'.zshrc'\033[0m file? \033[33m(Y/N)\033[0m\n")
             if create_file.lower() == 'y':
                 clear()
@@ -125,166 +125,172 @@ def cli_mod():
                 clear()
                 print(error)
 
-        # vvv IF FILE EXISTS vvv        
-        elif os.path.exists('.zshrc') == True:
+    # vvv IF FILE EXISTS vvv        
+    elif os.path.exists('.zshrc') == True:
 
-            # vvv STARTING PROMPT INPUT vvv
-            clear()
-            print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
-            host_user = input("What would you like your \033[33mstarting prompt\033[0m to be?\n")
-            
-            # vvv STARTING PROMPT COLOR vvv
-            clear()
-            while True:
-                colors()
-                print('\n"\033[33mHOST@USER\033[0m %1~ %# "\n')
-                host_user_color = input("What \033[33mcolor\033[0m do you want for your \033[33mstarting prompt\033[0m?\n")
-                if host_user_color.lower() in colors_list:
-                    if host_user_color.lower() == 'none':
-                        host_user_result = (host_user)
-                        break
-                    else:
-                        host_user_result = ("%F{" + host_user_color + "}" + host_user + "%f")
-                        break
-                else:
-                    clear()
-                    print(error)
-
-            # vvv STARTING PROMPT MISC vvv
-            clear()
-            while True:
-                misc()
-                print('\n"\033[33mHOST@USER\033[0m %1~ %# "\n')
-                host_user_misc = input("What \033[33mmodifier\033[0m would you like to apply to your \033[33mstarting prompt\033[0m?\n")
-                if host_user_misc.lower() in misc_list:
-                    if host_user_misc.lower() == 'bold':
-                        host_user_mod_begin = '%B'
-                        host_user_mod_end = '%b'
-                        break
-                    elif host_user_misc.lower() == 'highlight':
-                        host_user_mod_begin = '%S'
-                        host_user_mod_end = '%s'
-                        break
-                    elif host_user_misc.lower() == 'both':
-                        host_user_mod_begin = '%B%S'
-                        host_user_mod_end = '%s%b'
-                        break
-                    elif host_user_misc.lower() == 'none':
-                        host_user_mod_begin = ''
-                        host_user_mod_end = ''
-                        break
+        # vvv STARTING PROMPT INPUT vvv
+        clear()
+        print('"\033[33mHOST@USER\033[0m %1~ %# "\n')
+        host_user = input("What would you like your \033[33mstarting prompt\033[0m to be?\n")
+        
+        # vvv STARTING PROMPT COLOR vvv
+        clear()
+        while True:
+            colors()
+            print('\n"\033[33mHOST@USER\033[0m %1~ %# "\n')
+            host_user_color = input("What \033[33mcolor\033[0m do you want for your \033[33mstarting prompt\033[0m?\n")
+            if host_user_color.lower() in colors_list:
+                if host_user_color.lower() == 'none':
+                    host_user_result = (host_user)
                     break
                 else:
-                    clear()
-                    print(error)
-
-            # vvv WORKING DIRECTORY COLOR vvv
-            clear()
-            while True:
-                colors()
-                print('\n"HOST@USER \033[33m%1~\033[0m %# "\n')
-                cwd_color = input("What \033[33mcolor\033[0m do you want for your \033[33mcurrent working directory\033[0m?\n")
-                if cwd_color.lower() in colors_list:
-                    if cwd_color.lower() == 'none':
-                        cwd_result = '%1~'
-                        break
-                    else:
-                        cwd_result = ("%F{" + cwd_color + "}%1~" + "%f")
-                        break
-                else:
-                    clear()
-                    print(error)
-
-            # vvv WORKING DIRECTORY MISC vvv
-            clear()
-            while True:
-                misc()
-                print('\n"HOST@USER \033[33m%1~\033[0m %# "\n')
-                cwd_misc = input("What \033[33mmodifier\033[0m would you like to apply to your \033[33mcurrent working directory\033[0m?\n")
-                if cwd_misc.lower() in misc_list:
-                    if cwd_misc.lower() == 'bold':
-                        cwd_mod_begin = '%B'
-                        cwd_mod_end = '%b'
-                        break
-                    elif cwd_misc.lower() == 'highlight':
-                        cwd_mod_begin = '%S'
-                        cwd_mod_end = '%s'
-                        break
-                    elif cwd_misc.lower() == 'both':
-                        cwd_mod_begin = '%B%S'
-                        cwd_mod_end = '%s%b'
-                        break
-                    elif cwd_misc.lower() == 'none':
-                        cwd_mod_begin = ''
-                        cwd_mod_end = ''
-                        break
+                    host_user_result = ("%F{" + host_user_color + "}" + host_user + "%f")
                     break
-                else:
-                    clear()
-                    print(error)
+            else:
+                clear()
+                print(error)
 
-            # vvv ENDING PROMPT INPUT vvv
-            clear()
-            print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
-            end_prompt = input("What would you like your \033[33mending prompt\033[0m to be?\n")
-            
-            # vvv ENDING PROMPT COLOR vvv
-            clear()
-            while True:
-                colors()
-                print('\n"HOST@USER %1~ \033[33m%#\033[0m "\n')
-                end_prompt_color = input("What \033[33mcolor\033[0m do you want for your \033[33mending prompt\033[0m?\n")
-                if end_prompt_color.lower() in colors_list:
-                    if end_prompt_color.lower() == 'none':
-                        end_prompt_result = (end_prompt)
-                        break
-                    else:
-                        end_prompt_result = ("%F{" + end_prompt_color + "}" + end_prompt + "%f")
-                        break
-                else:
-                    clear()
-                    print(error)
-
-            # vvv ENDING PROMPT MISC vvv
-            clear()
-            while True:
-                misc()
-                print('\n"HOST@USER %1~ \033[33m%#\033[0m "\n')
-                end_prompt_misc = input("What \033[33mmodifier\033[0m do you want for your \033[33mending prompt\033[0m?\n")
-                if end_prompt_misc.lower() in misc_list:
-                    if end_prompt_misc.lower() == 'bold':
-                        end_prompt_mod_begin = '%B'
-                        end_prompt_mod_end = '%b'
-                        break
-                    elif end_prompt_misc.lower() == 'highlight':
-                        end_prompt_mod_begin = '%S'
-                        end_prompt_mod_end = '%s'
-                        break
-                    elif end_prompt_misc.lower() == 'both':
-                        end_prompt_mod_begin = '%B%S'
-                        end_prompt_mod_end = '%s%b'
-                        break
-                    elif end_prompt_misc.lower() == 'none':
-                        end_prompt_mod_begin = ''
-                        end_prompt_mod_end = ''
-                        break
+        # vvv STARTING PROMPT MISC vvv
+        clear()
+        while True:
+            misc()
+            print('\n"\033[33mHOST@USER\033[0m %1~ %# "\n')
+            host_user_misc = input("What \033[33mmodifier\033[0m would you like to apply to your \033[33mstarting prompt\033[0m?\n")
+            if host_user_misc.lower() in misc_list:
+                if host_user_misc.lower() == 'bold':
+                    host_user_mod_begin = '%B'
+                    host_user_mod_end = '%b'
                     break
-                else:
-                    clear()
-                    print(error)
-
-            # vvv CREATING NEW PS1 vvv
-            clear()
-            with open('.zshrc', 'r') as f:
-                lines = f.readlines()
-            for i in range(len(lines)):
-                if lines[i].startswith('PS1'):
-                    lines[i] = lines[i].replace(lines[i], (f"PS1=\"{host_user_mod_begin}{host_user_result}{host_user_mod_end} {cwd_mod_begin}{cwd_result}{cwd_mod_end} {end_prompt_mod_begin}{end_prompt_result}{end_prompt_mod_end} \"\n"))
-            with open('.zshrc', 'w') as f:
-                f.writelines(lines)
-                print("\033[32mCommand Line Prompt Line Changed Successfully\033[0m\n")
+                elif host_user_misc.lower() == 'highlight':
+                    host_user_mod_begin = '%S'
+                    host_user_mod_end = '%s'
+                    break
+                elif host_user_misc.lower() == 'both':
+                    host_user_mod_begin = '%B%S'
+                    host_user_mod_end = '%s%b'
+                    break
+                elif host_user_misc.lower() == 'none':
+                    host_user_mod_begin = ''
+                    host_user_mod_end = ''
+                    break
                 break
+            else:
+                clear()
+                print(error)
 
+        # vvv WORKING DIRECTORY COLOR vvv
+        clear()
+        while True:
+            colors()
+            print('\n"HOST@USER \033[33m%1~\033[0m %# "\n')
+            cwd_color = input("What \033[33mcolor\033[0m do you want for your \033[33mcurrent working directory\033[0m?\n")
+            if cwd_color.lower() in colors_list:
+                if cwd_color.lower() == 'none':
+                    cwd_result = '%1~'
+                    break
+                else:
+                    cwd_result = ("%F{" + cwd_color + "}%1~" + "%f")
+                    break
+            else:
+                clear()
+                print(error)
+
+        # vvv WORKING DIRECTORY MISC vvv
+        clear()
+        while True:
+            misc()
+            print('\n"HOST@USER \033[33m%1~\033[0m %# "\n')
+            cwd_misc = input("What \033[33mmodifier\033[0m would you like to apply to your \033[33mcurrent working directory\033[0m?\n")
+            if cwd_misc.lower() in misc_list:
+                if cwd_misc.lower() == 'bold':
+                    cwd_mod_begin = '%B'
+                    cwd_mod_end = '%b'
+                    break
+                elif cwd_misc.lower() == 'highlight':
+                    cwd_mod_begin = '%S'
+                    cwd_mod_end = '%s'
+                    break
+                elif cwd_misc.lower() == 'both':
+                    cwd_mod_begin = '%B%S'
+                    cwd_mod_end = '%s%b'
+                    break
+                elif cwd_misc.lower() == 'none':
+                    cwd_mod_begin = ''
+                    cwd_mod_end = ''
+                    break
+                break
+            else:
+                clear()
+                print(error)
+
+        # vvv ENDING PROMPT INPUT vvv
+        clear()
+        print('"HOST@USER %1~ \033[33m%#\033[0m "\n')
+        end_prompt = input("What would you like your \033[33mending prompt\033[0m to be?\n")
+        
+        # vvv ENDING PROMPT COLOR vvv
+        clear()
+        while True:
+            colors()
+            print('\n"HOST@USER %1~ \033[33m%#\033[0m "\n')
+            end_prompt_color = input("What \033[33mcolor\033[0m do you want for your \033[33mending prompt\033[0m?\n")
+            if end_prompt_color.lower() in colors_list:
+                if end_prompt_color.lower() == 'none':
+                    end_prompt_result = (end_prompt)
+                    break
+                else:
+                    end_prompt_result = ("%F{" + end_prompt_color + "}" + end_prompt + "%f")
+                    break
+            else:
+                clear()
+                print(error)
+
+        # vvv ENDING PROMPT MISC vvv
+        clear()
+        while True:
+            misc()
+            print('\n"HOST@USER %1~ \033[33m%#\033[0m "\n')
+            end_prompt_misc = input("What \033[33mmodifier\033[0m do you want for your \033[33mending prompt\033[0m?\n")
+            if end_prompt_misc.lower() in misc_list:
+                if end_prompt_misc.lower() == 'bold':
+                    end_prompt_mod_begin = '%B'
+                    end_prompt_mod_end = '%b'
+                    break
+                elif end_prompt_misc.lower() == 'highlight':
+                    end_prompt_mod_begin = '%S'
+                    end_prompt_mod_end = '%s'
+                    break
+                elif end_prompt_misc.lower() == 'both':
+                    end_prompt_mod_begin = '%B%S'
+                    end_prompt_mod_end = '%s%b'
+                    break
+                elif end_prompt_misc.lower() == 'none':
+                    end_prompt_mod_begin = ''
+                    end_prompt_mod_end = ''
+                    break
+                break
+            else:
+                clear()
+                print(error)
+
+        # vvv CREATING NEW PS1 vvv
+        clear()
+        with open('.zshrc', 'r') as f:
+            lines = f.readlines()
+        if not any(line.startswith('PS1') for line in lines):
+            lines.append('\n\nPS1="%n@%m %1~ %# "\n')
+        with open('.zshrc', 'w') as f:
+            f.writelines(lines)
+        with open('.zshrc', 'r') as f:
+            lines = f.readlines()
+        for i in range(len(lines)):
+            if lines[i].startswith('PS1'):
+                lines[i] = lines[i].replace(lines[i], (f"PS1=\"{host_user_mod_begin}{host_user_result}{host_user_mod_end} {cwd_mod_begin}{cwd_result}{cwd_mod_end} {end_prompt_mod_begin}{end_prompt_result}{end_prompt_mod_end} \"\n"))
+                with open('.zshrc', 'w') as f:
+                    f.writelines(lines)
+                    print("\033[32mCommand Line Prompt Line Changed Successfully\033[0m\n")
+                    break
+      
 # ==========> ALIAS MODIFICATION FUNCTION <==========
 '''
 Add aliases to LOCAL .zshrc file
