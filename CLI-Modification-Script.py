@@ -88,7 +88,7 @@ def menu():
                 alias_mod()
             elif start == '3':
                 clear()
-                print('Have a great day!')
+                print("\033[31mIMPORTANT:\033[0m\nTo see/use updated modifications, you must either:\n\n-\033[33mOpen a new terminal window\033[0m\n-\033[33m<source .zshrc> in it's directory\033[0m\n\nHave a great day!!!")
                 break
             else:
                 clear()
